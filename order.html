@@ -7,44 +7,51 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #2c3e50;
       color: white;
       padding: 1rem;
       text-align: center;
     }
+
     nav {
       background-color: #34495e;
       text-align: center;
       padding: 0.5rem;
     }
+
     nav a {
       color: #ecf0f1;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
+
     .container {
       max-width: 600px;
       margin: 2rem auto;
       background: white;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
+
     h2 {
       text-align: center;
       color: #2c3e50;
     }
+
     label {
       display: block;
       margin-top: 1rem;
       font-weight: 600;
     }
+
     input, textarea, select {
       width: 100%;
       padding: 0.7rem;
@@ -53,6 +60,7 @@
       border-radius: 5px;
       font-size: 1rem;
     }
+
     button {
       margin-top: 1.5rem;
       padding: 0.8rem;
@@ -64,12 +72,13 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     #response-msg {
       margin-top: 1rem;
       text-align: center;
       font-weight: bold;
-      color: green;
     }
+
     footer {
       margin-top: 2rem;
       text-align: center;
@@ -83,7 +92,7 @@
 
   <header>
     <h1>G-Tech Accessories</h1>
-    <p>Your one-stop shop for smart devices and accessories</p>
+    <p>Order Smart Accessories Now</p>
   </header>
 
   <nav>
@@ -91,7 +100,6 @@
     <a href="products.html">Products</a>
     <a href="order.html">Order</a>
     <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
   </nav>
 
   <div class="container">
@@ -109,22 +117,22 @@
       <label for="product">Select Product</label>
       <select name="product" id="product" required>
         <option value="">-- Choose Product --</option>
-        <option value="Phone">Phone</option>
-        <option value="Tablet">Tablet</option>
-        <option value="Charger">Charger</option>
-        <option value="Computer">Computer</option>
-        <option value="AirPods">AirPods</option>
-        <option value="Headset">Headset</option>
-        <option value="Phone Case">Phone Case</option>
-        <option value="Earphones">Earphones</option>
-        <option value="Drone">Drone</option>
+        <option>Phone</option>
+        <option>Tablet</option>
+        <option>Charger</option>
+        <option>Computer</option>
+        <option>AirPods</option>
+        <option>Headset</option>
+        <option>Phone Case</option>
+        <option>Earphones</option>
+        <option>Drone</option>
       </select>
 
       <label for="message">Additional Notes</label>
-      <textarea name="message" id="message" rows="4" placeholder="E.g. color, quantity, delivery details..."></textarea>
+      <textarea name="message" id="message" rows="4" placeholder="e.g., Color, Quantity, Delivery instructions"></textarea>
 
-      <button type="submit">Submit Order</button>
-      <p id="Thanks for your messages.We'll contact you soon"></p>
+      <button type="submit" id="submit-btn">Submit Order</button>
+      <div id="response-msg"></div>
     </form>
   </div>
 
@@ -135,24 +143,32 @@
   <script>
     const form = document.getElementById("order-form");
     const msg = document.getElementById("response-msg");
+    const btn = document.getElementById("submit-btn");
 
-    form.addEventListener("submit", async function(e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
       const data = new FormData(form);
+
       const res = await fetch(form.action, {
         method: form.method,
         body: data,
-        headers: { 'Accept': 'application/json' }
+        headers: { Accept: "application/json" },
       });
 
       if (res.ok) {
-        msg.textContent = "✅ Order received! You'll get a confirmation email shortly.";
+        msg.textContent = "✅ Thank you! Your order was successfully sent. We'll contact you soon.";
         msg.style.color = "green";
         form.reset();
       } else {
-        msg.textContent = "❌ Something went wrong. Please try again.";
+        msg.textContent = "❌ Failed to send. Please try again.";
         msg.style.color = "red";
       }
+
+      btn.disabled = false;
+      btn.textContent = "Submit Order";
     });
   </script>
 
