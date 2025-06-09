@@ -2,153 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Place Order - G-Tech Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - GadgetZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
     }
 
     header {
-      background-color: #222;
+      background-color: #111;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 1rem 0;
     }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    nav {
+      background-color: #333;
+      overflow: hidden;
     }
 
     nav a {
-      color: #fff;
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
       text-decoration: none;
-      font-weight: bold;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background-color: #575757;
     }
 
     .container {
-      max-width: 700px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem;
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: #007bff;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
+    .contact-info p, .contact-info a {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
     }
 
-    label {
-      margin-top: 1rem;
+    .contact-info i {
+      margin-right: 10px;
+      color: #0b7dda;
     }
 
-    input, select, textarea {
-      padding: 0.7rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
+    .reviews {
+      margin-top: 40px;
+    }
+
+    .review {
+      background-color: #f9f9f9;
+      border-left: 5px solid #0b7dda;
+      padding: 15px;
+      margin-bottom: 15px;
       border-radius: 5px;
     }
 
-    button {
-      margin-top: 1.5rem;
-      padding: 0.8rem;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
+    .review .stars {
+      color: gold;
+      margin-bottom: 5px;
     }
 
-    button:hover {
-      background-color: #0056b3;
+    .social-icons {
+      text-align: center;
+      margin-top: 30px;
     }
 
-    footer {
-      background-color: #222;
+    .social-icons a {
+      color: #333;
+      font-size: 22px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer {
+      background-color: #111;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .container {
-        margin: 1rem;
-        padding: 1rem;
-      }
+      padding: 15px 0;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>G-Tech Accessories</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="order.html">Order</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>GadgetZone</h1>
+    <p>Contact & Support</p>
   </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html" style="background-color: #444;">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+
   <div class="container">
-    <h2>Place Your Order</h2>
-    <form action="https://formspree.io/f/mvgrkgjw" method="POST">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required />
+    <h2>Get in Touch</h2>
+    <div class="contact-info">
+      <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/255758843829" target="_blank">0758843829</a></p>
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:danielgerald148@gmail.com">danielgerald148@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Location: Dar es Salaam, Tanzania</p>
+    </div>
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required />
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/255758843829"><i class="fab fa-whatsapp"></i></a>
+    </div>
 
-      <label for="product">Select Product:</label>
-      <select id="product" name="product" required>
-        <option value="">--Choose--</option>
-        <option>Phone</option>
-        <option>Tablet</option>
-        <option>Charger</option>
-        <option>Computer</option>
-        <option>AirPods</option>
-        <option>Headset</option>
-        <option>Phone Case</option>
-        <option>Earphones</option>
-        <option>Drones</option>
-      </select>
+    <div class="reviews">
+      <h2>Customer Reviews</h2>
 
-      <label for="address">Delivery Address:</label>
-      <textarea id="address" name="address" rows="4" required></textarea>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent service and fast delivery. I got my AirPods the next day!" – <strong>Anna M.</strong></p>
+      </div>
 
-      <button type="submit">Place Order</button>
-    </form>
+      <div class="review">
+        <div class="stars">★★★★☆</div>
+        <p>"The phone case was great quality. A little late on shipping but worth it." – <strong>David K.</strong></p>
+      </div>
+
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Best gadget store in Tanzania. Highly recommended!" – <strong>Neema T.</strong></p>
+      </div>
+    </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 G-Tech Accessories. All rights reserved.</p>
-  </footer>
+  <div class="footer">
+    <p>&copy; 2025 GadgetZone. All rights reserved.</p>
+  </div>
+
 </body>
-</html>
+</html>   
