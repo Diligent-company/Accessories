@@ -2,108 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order Now - G-Tech Accessories</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Place Order – G-Tech Accessories</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
       margin: 0;
-      padding: 20px;
-      background: #f7f9fc;
-      color: #333;
+      padding: 0;
     }
-    h1 {
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem;
       text-align: center;
-      margin-bottom: 20px;
-      color: #007bff;
     }
-    form {
+    nav {
+      background-color: #34495e;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .container {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 2rem auto;
       background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
     }
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 1rem;
       font-weight: 600;
-      color: #444;
     }
-    label i {
-      margin-right: 8px;
-      color: #007bff;
-    }
-    select, input[type="text"], input[type="email"] {
+    input, textarea, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 2px solid #ddd;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-    select:focus, input[type="text"]:focus, input[type="email"]:focus {
-      border-color: #007bff;
-      outline: none;
     }
     button {
-      margin-top: 20px;
-      background-color: #007bff;
+      margin-top: 1.5rem;
+      padding: 0.8rem;
+      width: 100%;
+      background-color: #2980b9;
       color: white;
       border: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
-    button:hover {
-      background-color: #0056b3;
-      animation: pulse 0.6s ease;
+    #response-msg {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: green;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-      100% { transform: scale(1); }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 1rem;
+      background-color: #ecf0f1;
+      color: #2c3e50;
     }
   </style>
 </head>
 <body>
-  <h1><i class="fas fa-shopping-cart"></i> Place Your Order</h1>
-  <form action="https://formspree.io/f/mvgrkgjw" method="POST" id="order-form">
-    <label for="name"><i class="fas fa-user"></i> Full Name:</label>
-    <input type="text" id="name" name="Name" placeholder="Your full name" required />
 
-    <label for="email"><i class="fas fa-envelope"></i> Email Address:</label>
-    <input type="email" id="email" name="Email" placeholder="example@mail.com" required />
+  <header>
+    <h1>G-Tech Accessories</h1>
+    <p>Your one-stop shop for smart devices and accessories</p>
+  </header>
 
-    <label for="product"><i class="fas fa-box-open"></i> Select Product:</label>
-    <select id="product" name="Product" required>
-      <option value="" disabled selected>Choose a product</option>
-      <option value="Phone">Phone</option>
-      <option value="Tablet">Tablet</option>
-      <option value="Charger">Charger</option>
-      <option value="Computer">Computer</option>
-      <option value="AirPods">AirPods</option>
-      <option value="Headset">Headset</option>
-      <option value="Phone Case">Phone Case</option>
-      <option value="Earphones">Earphones</option>
-      <option value="Drones">Drones</option>
-    </select>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
 
-    <label for="quantity"><i class="fas fa-sort-numeric-up"></i> Quantity:</label>
-    <input type="number" id="quantity" name="Quantity" min="1" value="1" required />
+  <div class="container">
+    <h2>Place Your Order</h2>
+    <form id="order-form" action="https://formspree.io/f/mvgrkgjw" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" required>
 
-    <button type="submit"><i class="fas fa-paper-plane"></i> Submit Order</button>
-  </form>
+      <label for="email">Email Address</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="phone">Phone Number (WhatsApp)</label>
+      <input type="tel" name="phone" id="phone" required>
+
+      <label for="product">Select Product</label>
+      <select name="product" id="product" required>
+        <option value="">-- Choose Product --</option>
+        <option value="Phone">Phone</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Charger">Charger</option>
+        <option value="Computer">Computer</option>
+        <option value="AirPods">AirPods</option>
+        <option value="Headset">Headset</option>
+        <option value="Phone Case">Phone Case</option>
+        <option value="Earphones">Earphones</option>
+        <option value="Drone">Drone</option>
+      </select>
+
+      <label for="message">Additional Notes</label>
+      <textarea name="message" id="message" rows="4" placeholder="E.g. color, quantity, delivery details..."></textarea>
+
+      <button type="submit">Submit Order</button>
+      <p id="Thanks for your messages.We'll contact you soon"></p>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 G-Tech Accessories. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById("order-form");
+    const msg = document.getElementById("response-msg");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        msg.textContent = "✅ Order received! You'll get a confirmation email shortly.";
+        msg.style.color = "green";
+        form.reset();
+      } else {
+        msg.textContent = "❌ Something went wrong. Please try again.";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+
 </body>
 </html>
