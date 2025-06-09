@@ -1,64 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About G-Tech Accessories</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - GadgetZone</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #575757;
+    }
+
+    .about-container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .about-container h2 {
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .about-container p, ul {
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Our Products</h1>
-        <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="order.html">Order</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </nav>
-        </header>      
 
-    <main>
-        <section class="about">
-            <h2>About Us</h2>
-            <div class="team">
-                <div class="team-member">
-                    <img src="IMG-20240611-WA0011.jpg" alt="Founder">
-                <h3>Frolence Edwini</h3>
-                    <p>Founder</p>
-                </div>
-                <div class="team-member">
-                    <img src="IMG-20231129-WA0021.jpg" alt="Manager">
-                <h3>Angela John</h3>
-                    <p>Manager</p>
-                </div>
-                <div class="team-member">
-                    <img src="MOC_8623.jpg" alt="Director">
-                <h3>Innocent Frank</h3>
-                    <p>Director</p>
-                </div>
-            </div>
-            <div class="services">
-                <h3>Our Services</h3>
-                <p>We provide a variety of delicious foods made from the freshest ingredients. </br>Our services include catering for events, home delivery, and a dine-in experience that is second to none.</p>
-            </div>
-            <div class="core-values">
-                <h3>Our Core Values</h3>
-                <p>We believe in quality, freshness, and customer satisfaction. Our core values are integrity, excellence, and community.</br> We strive to deliver the best dining experience to all our customers.</p>
-            </div>
-			</section>
-    </main>
+  <header>
+    <h1>GadgetZone</h1>
+    <p>Your Home for Smart Accessories</p>
+  </header>
 
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html" style="background-color: #444;">About</a>
+  </nav>
 
+  <div class="about-container">
+    <h2>About GadgetZone</h2>
+    <p>Welcome to <strong>GadgetZone</strong>, your number one destination for premium mobile and tech accessories in Tanzania. From smartphones and tablets to drones and headsets, we bring you the most reliable products at unbeatable prices.</p>
 
-    <footer>
-        <p>&copy; 2025 G-Tech Accessories. All rights reserved.</p>
-      </footer>
-    </body>
-    </html>
-    
-    
+    <p>Founded in 2025, GadgetZone was born out of a desire to simplify how people shop for the gadgets they love. Our goal is to provide a seamless and affordable experience for every customer — whether you’re buying a new charger or ordering high-end wireless earphones.</p>
 
+    <p>We specialize in the following accessories:</p>
+    <ul>
+      <li>Smartphones & Tablets</li>
+      <li>Chargers & Cables</li>
+      <li>AirPods, Earphones & Headsets</li>
+      <li>Computer Peripherals</li>
+      <li>Phone Cases & Screen Protectors</li>
+      <li>Drones & Smart Devices</li>
+    </ul>
 
+    <div class="section" id="mission">
+      <h2>Our Mission</h2>
+      <p>To empower every tech enthusiast with affordable, quality, and innovative gadget solutions — delivering unmatched value, service, and reliability in every purchase.</p>
+    </div>
+
+    <div class="section" id="vision">
+      <h2>Our Vision</h2>
+      <p>To become the leading one-stop shop for mobile and tech accessories in East Africa, setting new standards in product quality, accessibility, and customer care.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 GadgetZone. All rights reserved.</p>
+  </div>
+
+  <!-- JS for fade-in on scroll -->
+  <script>
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
